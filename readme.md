@@ -8,7 +8,8 @@
 
 - 1 bit = 0 or 1
 - 8 bits = 1 byte
-- 1024 bytes = 1 Megabyte (MB)
+- 1024 bytes = 1 kilobyte (Kb)
+- 1024 kilobytes = 1 Megabyte (MB)
 - 1024 MB = 1 Gigabyte (GB)
 - 1024 GB = 1 Terabyte (TB)
 
@@ -100,4 +101,29 @@ image resolution (in pixels) × colour depth (in bits)
 
 ```less
 sample rate (in Hz) × sample resolution (in bits) × length of sample (in seconds)
+```
+
+#### Example 1. A photograph is 1024 × 1080 pixels and uses a colour depth of 32 bits. How many photographs of this size would fit onto a memory stick of 64GiB?
+
+```less
+= image resolution (in pixels) × colour depth (in bits)
+= (1024 * 1080) * 32
+= 1,105,920 * 32
+= 35,389,440 bits
+
+// 35,389,440 bits to bytes
+
+= 35,389,440 / 8
+= 4,423,680 bytes
+
+// 64 GiB to bytes
+
+= 64 * 1024 * 1024 * 1024
+= 68,719,476,736 bytes
+
+// find how many pic fit
+
+= 68,719,476,736 / 4,423,680
+= 15,534.45925925926 pics
+
 ```
