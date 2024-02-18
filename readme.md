@@ -1,23 +1,20 @@
-# IGCSE O LEVEL COMPUTER SCIENCE NOTES
+## IGCSE O LEVEL COMPUTER SCIENCE NOTES
 
 ---
 
-## Section 1: Computer System
+### Section 1: Computer System
 
-### 1. Data Representation
+#### 1. Data Representation
 
-- 1 bit = 0 or 1
-- 8 bits = 1 byte
-- 1024 bytes = 1 kilobyte (Kb)
-- 1024 kilobytes = 1 Megabyte (MB)
-- 1024 MB = 1 Gigabyte (GB)
-- 1024 GB = 1 Terabyte (TB)
+- 1 bit represents a binary value of either 0 or 1.
+- 8 bits constitute 1 byte.
+- Subsequently, 1024 bytes form 1 kilobyte (Kb), 1024 kilobytes form 1 Megabyte (MB), 1024 MB make 1 Gigabyte (GB), and 1024 GB make 1 Terabyte (TB).
 
-#### Conversion between Denary, Binary, and Hexadecimal
+#### Conversion among Denary, Binary, and Hexadecimal
 
-- Denary (Decimal) - Base 10 unit
-- Binary - Base 2 unit
-- Hexadecimal - Base 16 unit
+- Denary (Decimal) - Base 10.
+- Binary - Base 2.
+- Hexadecimal - Base 16.
 
 #### Relationships
 
@@ -28,47 +25,56 @@
 - Binary to Hexadecimal
 - Hexadecimal to Binary
 
+#### Benefits:
+
+- Understanding data representation helps in efficient storage and manipulation of information.
+- Mastery of conversion techniques facilitates understanding of low-level programming and digital electronics.
+
+#### Drawbacks:
+
+- Initial learning curve may be steep for some learners.
+- Complex conversions can be time-consuming without practice.
+
 ---
 
 ### Example 1: Converting 102 Denary to Binary
 
-```
-// Step 1: Write labels of powers of 2 for binary (powers of 16 for hexadecimal)
+```less
+// Labels of powers of 2 for binary:
 128 64 32 16 8 4 2 1 ~ Label
 
-// Step 2: Place the denary number under the label less than the target (102). Equation: target - label
-
+// Placement of denary number under respective labels:
 128 64 32 16 8 4 2 1 ~ Label
  0  1  1  0  0 1 1 0
 
 // Analysis:
-// 102 - 128 = ❌
-// 102 - 64 = 38
-// 38 - 32 = 6
-// Skipping 16 and 8 as they're greater than our target.
-// 6 - 4 = 2
-// 2 - 2 = 0
+102 - 128 = ❌
+102 - 64 = 38
+38 - 32 = 6
+// Skipping 16 and 8 as they exceed the target.
+6 - 4 = 2
+2 - 2 = 0
 
-Answer for 102 Denary is: 01100110 in binary.
+Result for 102 Denary is: 01100110 in binary.
 ```
 
-### Example 2: Converting 01100110 Binary to Denary
+#### Example 2: Converting 01100110 Binary to Denary
 
-```
-// Step 1: Write labels of powers of 2 for binary (powers of 16 for hexadecimal)
+```less
+// Labels of powers of 2 for binary:
 128 64 32 16 8 4 2 1 ~ Label
 
-// Step 2: Place the binary value under all labels
+// Binary values under respective labels:
 128 64 32 16 8 4 2 1 ~ Label
  0  1  1  0  0 1 1 0
 
-// Step 3: Sum all labels with a value of 1
+// Sum of labels with value 1:
 64 + 32 + 4 + 2 = 102
 
-Answer for 01100110 Binary is: 102 Denary.
+Result for 01100110 Binary is: 102 Denary.
 ```
 
-### Exercises
+#### Exercises
 
 1. Convert 302 Denary to Binary step by step.
 2. Convert 1011011 Binary to Denary step by step.
@@ -77,86 +83,82 @@ Answer for 01100110 Binary is: 102 Denary.
 
 ---
 
-## Representation of Sound
+### Representation of Sound
 
-- Sound is analog (not electric).
-- Computers can't process sound directly.
-- Sound must be converted to digital using ADC (Analog to Digital Converter).
+- Sound is analog and needs to be converted to digital for computer processing using ADC (Analog to Digital Converter).
 
-## Pixel (px)
+#### Benefits:
 
-- Black and white has 1 bit per px (2^0 = 1).
-- Four colors have 2 bits per px (2^2 = 4).
-- Eight colors have 3 bits per px (2^3 = 8).
+- Digital representation enables precise manipulation and storage of sound.
+- Facilitates various digital audio processing techniques like compression, filtering, and synthesis.
 
-### Calculation of file size
+#### Drawbacks:
 
-- File size of image is calculated using this equation:
+- Loss of some detail during analog-to-digital conversion can impact sound quality.
+- Higher sampling rates and resolutions lead to larger file sizes.
 
-```less
-image resolution (in pixels) × colour depth (in bits)
+### Pixel (px)
+
+- Pixel depth varies based on color representation: 1 bit for black and white, 2 bits for four colors, and 3 bits for eight colors.
+
+#### Calculation of file size
+
+- For images: `image resolution (in pixels) × colour depth (in bits)`
+- For mono sound files: `sample rate (in Hz) × sample resolution (in bits) × length of sample (in seconds)`
+
+#### Example 1: Calculating Memory Stick Capacity
+
 ```
+Given: Photograph size is 1024 × 1080 pixels with a color depth of 32 bits.
+Memory stick capacity: 64GiB
 
-- Size of a mono sound file is calculated as:
-
-```less
-sample rate (in Hz) × sample resolution (in bits) × length of sample (in seconds)
-```
-
-#### Example 1. A photograph is 1024 × 1080 pixels and uses a colour depth of 32 bits. How many photographs of this size would fit onto a memory stick of 64GiB?
-
-```less
-= image resolution (in pixels) × colour depth (in bits)
+Calculations:
 = (1024 * 1080) * 32
 = 1,105,920 * 32
 = 35,389,440 bits
 
-// 35,389,440 bits to bytes
-
+Converting bits to bytes:
 = 35,389,440 / 8
 = 4,423,680 bytes
 
-// 64 GiB to bytes
-
+Memory stick capacity in bytes:
 = 64 * 1024 * 1024 * 1024
 = 68,719,476,736 bytes
 
-// find how many pic fit
-
+Number of photographs fitting onto the memory stick:
 = 68,719,476,736 / 4,423,680
-= 15,534.45925925926 pics
-
+= 15,534.45925925926 photos
 ```
 
-### Data compression
+### Data Compression
 
-reason why we compress our files:
+#### Reasons for Compression:
 
-- to save the storage space.
-- to reduce our file size.
-- to time taken to stream a music.
-- to reduce the time taken to upload, download or transfer a file across a network.
-- to reduce the bandwidth.
-- reduced file size also reduces costs.
+- To save storage space
+- To enhance transmission speed over networks
+- To lower bandwidth consumption
+- To reduce our file size.
+- To time taken to stream a music.
+- To reduce the time taken to upload, download or transfer a file across a network.
+- To reduces costs when uploading to cloud.
 
-### Difference between Lossy and Lossless file compression
+#### Lossy vs. Lossless Compression
 
-#### Lossy
+##### Lossy Compression
 
 - File compression algorithm is used
 - Eliminates unnecessary data from the file
 - Data can't be reconstructed once it has been compressed.
 - Results in some loss of detail when compared to the original file.
 - Lossy files are more smaller than lossless files.
+- Examples include MP3, MP4, and JPEG formats
 
-Common lossy file compression algorithms are:
-» MPEG-3 (MP3) and MPEG-4 (MP4)
-» JPEG.
-
-#### Lossless file compression
+##### Lossless Compression
 
 - File compression algorithm is used
-- all the data from the original uncompressed file can be
-  reconstructed
-- it is a form of lossless/reversible file compression
-- reduces the size of a string of adjacent, identical data
+- All the data from the original uncompressed file can be
+  reconstructed / Preserves all original data
+- Suitable for situations requiring exact data reconstruction
+- It is a form of lossless/reversible file compression
+- Reduces the size of a string of adjacent, identical data
+- Examples include ZIP and PNG formats
