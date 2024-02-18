@@ -127,3 +127,36 @@ sample rate (in Hz) × sample resolution (in bits) × length of sample (in secon
 = 15,534.45925925926 pics
 
 ```
+
+### Data compression
+
+reason why we compress our files:
+
+- to save the storage space.
+- to reduce our file size.
+- to time taken to stream a music.
+- to reduce the time taken to upload, download or transfer a file across a network.
+- to reduce the bandwidth.
+- reduced file size also reduces costs.
+
+### Difference between Lossy and Lossless file compression
+
+#### Lossy
+
+- File compression algorithm is used
+- Eliminates unnecessary data from the file
+- Data can't be reconstructed once it has been compressed.
+- Results in some loss of detail when compared to the original file.
+- Lossy files are more smaller than lossless files.
+
+Common lossy file compression algorithms are:
+» MPEG-3 (MP3) and MPEG-4 (MP4)
+» JPEG.
+
+#### Lossless file compression
+
+- File compression algorithm is used
+- all the data from the original uncompressed file can be
+  reconstructed
+- it is a form of lossless/reversible file compression
+- reduces the size of a string of adjacent, identical data
